@@ -1,24 +1,25 @@
-import {BrowserRouter, Route, Switch} from "react-router-dom";
-import Home from "./components/Home"
+import React, {BrowserRouter, Route, Routes } from 'react-router-dom';
+
+import Home from './components/Home';
 import About from './components/About';
 import SinglePost from './components/SinglePost';
 import Post from './components/Post';
 import Project from './components/Project';
 
-function App() {
-  return 
-  (
-    <BrowserRouter>
-    <Switch>
-      <Route component={Home} path='/' />
-      <Route component={About} path='/about' />
-      <Route component={SinglePost} path='/post/:slug' />
-      <Route component={Post} path='/post' />
-      <Route component={Project} path='/project' />
+function App()  {
 
-    </Switch>
-   </BrowserRouter>
-  )
-}
+    return (
+			<BrowserRouter>
+				<Routes>
+					<Route element={Home} path='/' exact />
+					<Route element={About} path='/about' />
+					<Route element={SinglePost} path='/post/:slug' />
+					<Route element={Post} path='/post' />
+					<Route element={Project} path='/project' />
+				</Routes>
+			</BrowserRouter>
+		);
+  }
+
 
 export default App;
