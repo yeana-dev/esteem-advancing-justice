@@ -1,4 +1,7 @@
-import React, {BrowserRouter, Route, Routes } from 'react-router-dom';
+import React from 'react';
+import BrowserRouter from 'react-router-dom';
+import Route from 'react-router-dom';
+import Routes from 'react-router-dom';
 
 import Home from './components/Home';
 import About from './components/About';
@@ -11,11 +14,11 @@ function App()  {
     return (
 			<BrowserRouter>
 				<Routes>
-					<Route element={Home} path='/' exact />
-					<Route element={About} path='/about' />
-					<Route element={SinglePost} path='/post/:slug' />
-					<Route element={Post} path='/post' />
-					<Route element={Project} path='/project' />
+					<Route exact path='/' component={Home} />
+					<Route exact path='/about' component={About} />
+					<Route exact path='/post/:slug' component={SinglePost} />
+					<Route exact path='/post' component={Post} />
+					<Route exact path='/project' component={Project} />
 				</Routes>
 			</BrowserRouter>
 		);
